@@ -1,245 +1,621 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>NorteWork | Pacotes de Seguidores Instagram</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- FAVICON -->
-<link rel="icon" type="image/png" href="logo.png">
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
 
-<title>NorteWork | Crescimento no Instagram</title>
+        /* HEADER */
+        .top-header {
+            background: linear-gradient(135deg, #0b2b5c, #0a1f3e);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    color: #333;
-}
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
 
-header {
-    background: linear-gradient(90deg, #0a1f44, #1c3d7a);
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
-}
+        /* Logo imagem real */
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
 
-.logo {
-    max-width: 140px;
-    margin-bottom: 15px;
-}
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
-}
+        .top-header h1 {
+            font-size: 2rem;
+            letter-spacing: -0.5px;
+        }
 
-header p {
-    margin-top: 10px;
-    font-size: 16px;
-    opacity: 0.9;
-}
+        .top-header p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-top: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px 20px;
-}
+        .badge-header {
+            display: inline-block;
+            background: #ffb347;
+            color: #1e2a3a;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
 
-.section {
-    margin-bottom: 50px;
-}
+        /* CONTAINER */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
+        /* seção destaque */
+        .hero-card {
+            background: linear-gradient(120deg, #ffffff, #fef7e0);
+            border-radius: 28px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,180,70,0.3);
+        }
 
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-}
+        .hero-card h2 {
+            font-size: 1.8rem;
+            color: #0b2b5c;
+        }
 
-.benefits {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+        .hero-card p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: #2d3e5f;
+        }
 
-.benefit {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
+        /* tabela de preços estilo Instagram */
+        .pricing-section {
+            margin-bottom: 3rem;
+        }
 
-.benefit h3 {
-    margin-bottom: 10px;
-    color: #1c3d7a;
-}
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #0f2b4d;
+        }
 
-.cta {
-    text-align: center;
-    margin-top: 30px;
-}
+        .section-sub {
+            text-align: center;
+            color: #4b5563;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
 
-.btn {
-    background: #25D366;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 17px;
-    display: inline-block;
-    transition: 0.3s;
-}
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1rem;
+        }
 
-.btn:hover {
-    background: #1ebe5d;
-}
+        .price-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.2rem 2rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9edf2;
+            position: relative;
+        }
 
-.highlight {
-    background: linear-gradient(90deg, #ff9800, #ffb74d);
-    color: white;
-    padding: 30px 20px;
-    border-radius: 12px;
-    text-align: center;
-}
+        .price-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            border-color: #ffb347;
+        }
 
-footer {
-    background: #0a1f44;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 13px;
-}
+        .popular-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff9800;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 40px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 22px;
-    }
+        .follower-count {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #0b2b5c;
+            margin-bottom: 0.5rem;
+        }
 
-    header p {
-        font-size: 14px;
-    }
+        .follower-count span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: #5c6f87;
+        }
 
-    .logo {
-        max-width: 110px;
-    }
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1f6392;
+            margin: 1rem 0 0.5rem;
+        }
 
-    .btn {
-        width: 100%;
-        padding: 16px;
-        font-size: 16px;
-    }
+        .price small {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
 
-    .highlight {
-        padding: 25px 15px;
-    }
-}
-</style>
+        .delivery {
+            color: #059669;
+            background: #e0f2fe;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
 
+        .btn-whats {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            width: 100%;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1rem;
+            font-family: inherit;
+        }
+
+        .btn-whats:hover {
+            background: #1da15a;
+            transform: scale(0.98);
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 1rem 0;
+            text-align: left;
+            padding-left: 0.5rem;
+        }
+
+        .features-list li {
+            margin: 8px 0;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features-list i {
+            color: #ff9800;
+            width: 18px;
+        }
+
+        /* beneficios e info */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #eef2f6;
+        }
+
+        .benefit-item i {
+            font-size: 2rem;
+            color: #ff9800;
+            margin-bottom: 0.8rem;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            background: #f1f5f9;
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #0a1f3e;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .btn-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            border-radius: 50px;
+            padding: 12px 20px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 99;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* responsividade extrema para celular */
+        @media (max-width: 700px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-card h2 {
+                font-size: 1.4rem;
+            }
+
+            .btn-floating {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .top-header {
+                padding: 1.5rem 1rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .price-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .follower-count {
+                font-size: 2rem;
+            }
+
+            .price {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ajuste para telas muito pequenas (ex: 360px) */
+        @media (max-width: 480px) {
+            .logo-container {
+                gap: 8px;
+            }
+            .logo-img {
+                width: 50px;
+                height: 50px;
+            }
+            .top-header h1 {
+                font-size: 1.6rem;
+            }
+            .benefit-item {
+                padding: 1rem;
+            }
+            .btn-whats {
+                font-size: 0.85rem;
+                padding: 10px 12px;
+            }
+        }
+
+        /* garantindo que a logo.png seja exibida corretamente */
+        .logo-img img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <!-- LOGO -->
-    <img src="logo.png" alt="NorteWork Logo" class="logo">
-
-    <h1>NorteWork</h1>
-    <p>Impulsione seu Instagram com estratégia, segurança e resultados reais</p>
+<header class="top-header">
+    <div class="logo-container">
+        <div class="logo-img">
+            <!-- 
+                ⚠️ COLOQUE SUA LOGO AQUI ⚠️
+                Substitua "logo.png" pelo nome/caminho correto da sua imagem.
+                Exemplo: "minha-logo.png" ou "assets/logo.png"
+            -->
+            <img src="logo.png" alt="NorteWork Logo">
+        </div>
+        <h1>NorteWork</h1>
+    </div>
+    <p>Especialistas em crescimento autêntico no Instagram. Entregas rápidas, perfis de qualidade e segurança total.</p>
+    <div class="badge-header">
+        <i class="fas fa-bolt"></i> ENTREGA IMEDIATA PERMANENTES
+    </div>
 </header>
 
 <div class="container">
+    <!-- Destaque -->
+    <div class="hero-card">
+        <h2>🚀 Aumente sua autoridade hoje mesmo</h2>
+        <p>Mais seguidores reais = mais negócios, mais credibilidade e reconhecimento. Pacotes com entrega ultrarrápida!</p>
+    </div>
 
-    <section class="section">
-        <div class="highlight">
-            <h2>Transforme seu Instagram em uma máquina de crescimento</h2>
-            <p>Mais visibilidade, mais autoridade e mais oportunidades para o seu negócio</p>
-        </div>
-    </section>
+    <!-- SEÇÃO DE PREÇOS EXATAMENTE CONFORME TABELA DA IMAGEM -->
+    <div class="pricing-section">
+        <h2 class="section-title">📊 Pacotes de Seguidores</h2>
+        <p class="section-sub">Escolha o pacote ideal para alavancar seu perfil — entrega imediata e seguidores permanentes</p>
 
-    <section class="section">
-        <h2>Por que escolher a NorteWork?</h2>
-
-        <div class="benefits">
-
-            <div class="benefit">
-                <h3>Crescimento Rápido</h3>
-                <p>Entrega ágil com início imediato e conclusão em até 3 dias</p>
+        <div class="pricing-grid">
+            <!-- Pacote +50 seguidores -->
+            <div class="price-card">
+                <div class="follower-count">+50 <span>seguidores</span></div>
+                <div class="price">R$ 4,66</div>
+                <div class="delivery"><i class="fas fa-clock"></i> Entrega imediata</div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Perfis reais e de qualidade</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança garantida</li>
+                    <li><i class="fas fa-chart-line"></i> Aumento de prova social</li>
+                </ul>
+                <button class="btn-whats" data-package="+50 seguidores" data-price="4,66">
+                    <i class="fab fa-whatsapp"></i> Comprar agora
+                </button>
             </div>
 
-            <div class="benefit">
-                <h3>Perfis de Qualidade</h3>
-                <p>Seguidores com padrão elevado para fortalecer sua credibilidade</p>
+            <!-- Pacote +100 seguidores -->
+            <div class="price-card">
+                <div class="follower-count">+100 <span>seguidores</span></div>
+                <div class="price">R$ 7,36</div>
+                <div class="delivery"><i class="fas fa-clock"></i> Entrega imediata</div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Perfis reais e de qualidade</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança garantida</li>
+                    <li><i class="fas fa-chart-line"></i> Aumento de prova social</li>
+                </ul>
+                <button class="btn-whats" data-package="+100 seguidores" data-price="7,36">
+                    <i class="fab fa-whatsapp"></i> Comprar agora
+                </button>
             </div>
 
-            <div class="benefit">
-                <h3>Segurança Garantida</h3>
-                <p>Métodos seguros que preservam sua conta e sua reputação</p>
+            <!-- Pacote +300 seguidores -->
+            <div class="price-card">
+                <div class="follower-count">+300 <span>seguidores</span></div>
+                <div class="price">R$ 16,66</div>
+                <div class="delivery"><i class="fas fa-clock"></i> Entrega imediata</div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Perfis reais e de qualidade</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança garantida</li>
+                    <li><i class="fas fa-chart-line"></i> Aumento de prova social</li>
+                </ul>
+                <button class="btn-whats" data-package="+300 seguidores" data-price="16,66">
+                    <i class="fab fa-whatsapp"></i> Comprar agora
+                </button>
             </div>
 
-            <div class="benefit">
-                <h3>Mais Autoridade</h3>
-                <p>Se destaque da concorrência e conquiste mais confiança do público</p>
+            <!-- Pacote +1.000 seguidores -->
+            <div class="price-card">
+                <div class="follower-count">+1.000 <span>seguidores</span></div>
+                <div class="price">R$ 37,36</div>
+                <div class="delivery"><i class="fas fa-clock"></i> Entrega imediata</div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Perfis reais e de qualidade</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança garantida</li>
+                    <li><i class="fas fa-chart-line"></i> Aumento de prova social</li>
+                </ul>
+                <button class="btn-whats" data-package="+1.000 seguidores" data-price="37,36">
+                    <i class="fab fa-whatsapp"></i> Comprar agora
+                </button>
             </div>
 
-        </div>
-    </section>
+            <!-- Pacote +2.000 seguidores -->
+            <div class="price-card">
+                <div class="follower-count">+2.000 <span>seguidores</span></div>
+                <div class="price">R$ 58,90</div>
+                <div class="delivery"><i class="fas fa-clock"></i> Entrega imediata</div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Perfis reais e de qualidade</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança garantida</li>
+                    <li><i class="fas fa-chart-line"></i> Aumento de prova social</li>
+                </ul>
+                <button class="btn-whats" data-package="+2.000 seguidores" data-price="58,90">
+                    <i class="fab fa-whatsapp"></i> Comprar agora
+                </button>
+            </div>
 
-    <section class="section">
-        <h2>Resultados que fazem a diferença</h2>
-
-        <div class="card">
-            ✔ Aumente sua prova social rapidamente  
-            <br><br>
-            ✔ Melhore sua imagem profissional  
-            <br><br>
-            ✔ Atraia mais clientes e oportunidades  
-            <br><br>
-            ✔ Destaque-se no mercado digital  
-        </div>
-    </section>
-
-    <section class="section">
-        <h2>Como funciona?</h2>
-
-        <div class="card">
-            1. Você entra em contato pelo WhatsApp  
-            <br><br>
-            2. Nossa equipe analisa seu perfil  
-            <br><br>
-            3. Iniciamos o crescimento de forma estratégica  
-            <br><br>
-            4. Entrega completa em até 3 dias  
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="highlight">
-            <h2>Pronto para crescer no Instagram?</h2>
-            <p>Fale agora com nossa equipe e comece hoje mesmo</p>
-
-            <div class="cta">
-                <a class="btn" href="https://wa.me/5538991307687" target="_blank">
-                    Falar no WhatsApp
-                </a>
+            <!-- Pacote +10.000 seguidores -->
+            <div class="price-card">
+                <div class="popular-tag">🔥 MAIS VENDIDO</div>
+                <div class="follower-count">+10.000 <span>seguidores</span></div>
+                <div class="price">R$ 169,90</div>
+                <div class="delivery"><i class="fas fa-clock"></i> Entrega imediata</div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Pacote turbo premium</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança garantida</li>
+                    <li><i class="fas fa-chart-line"></i> Maior autoridade e alcance</li>
+                </ul>
+                <button class="btn-whats" data-package="+10.000 seguidores" data-price="169,90">
+                    <i class="fab fa-whatsapp"></i> Comprar agora
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
+    <!-- Seção de benefícios reforçados -->
+    <div class="benefits-grid">
+        <div class="benefit-item">
+            <i class="fas fa-rocket"></i>
+            <h3>Crescimento Rápido</h3>
+            <p>Entrega ágil com início imediato e conclusão em até 3 dias</p>
+        </div>
+        <div class="benefit-item">
+            <i class="fas fa-users"></i>
+            <h3>Perfis de Qualidade</h3>
+            <p>Seguidores com padrão elevado para fortalecer sua credibilidade</p>
+        </div>
+        <div class="benefit-item">
+            <i class="fas fa-lock"></i>
+            <h3>Segurança Garantida</h3>
+            <p>Métodos seguros que preservam sua conta e sua reputação</p>
+        </div>
+        <div class="benefit-item">
+            <i class="fas fa-chart-simple"></i>
+            <h3>Mais Autoridade</h3>
+            <p>Destaque-se da concorrência e conquiste mais confiança do público</p>
+        </div>
+    </div>
+
+    <!-- Como funciona + resultados responsivo -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; margin: 2rem 0;">
+        <div style="flex:1; min-width: 220px; background: white; border-radius: 20px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+            <h3><i class="fas fa-chart-line" style="color:#ff9800;"></i> Resultados que fazem diferença</h3>
+            <ul style="margin-top: 1rem; list-style: none;">
+                <li style="margin-bottom: 10px;">✔ Aumente sua prova social rapidamente</li>
+                <li style="margin-bottom: 10px;">✔ Melhore sua imagem profissional</li>
+                <li style="margin-bottom: 10px;">✔ Atraia mais clientes e oportunidades</li>
+                <li style="margin-bottom: 10px;">✔ Destaque-se no mercado digital</li>
+            </ul>
+        </div>
+        <div style="flex:1; min-width: 220px; background: white; border-radius: 20px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+            <h3><i class="fas fa-play-circle" style="color:#ff9800;"></i> Como funciona?</h3>
+            <ol style="margin-top: 1rem; margin-left: 1.2rem;">
+                <li>Você entra em contato pelo WhatsApp</li>
+                <li>Nossa equipe analisa seu perfil</li>
+                <li>Iniciamos o crescimento de forma estratégica</li>
+                <li>Entrega completa em até 3 dias</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Call to action final com botão whatsapp -->
+    <div style="background: linear-gradient(110deg, #0a1f44, #12376e); border-radius: 30px; padding: 2rem; text-align: center; color: white; margin: 1rem 0 1.5rem;">
+        <h2>Pronto para decolar no Instagram?</h2>
+        <p style="margin: 0.5rem 0 1.2rem;">Fale agora com nossa equipe e comece hoje mesmo com entrega imediata</p>
+        <a href="https://wa.me/5538991307687?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20NorteWork%20e%20gostaria%20de%20comprar%20seguidores%20para%20Instagram" 
+           class="btn-whats" style="display: inline-flex; width: auto; background: #25D366; text-decoration: none; padding: 12px 28px; font-size: 1.1rem;">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+        </a>
+    </div>
 </div>
 
+<!-- Botão flutuante do WhatsApp com mensagem padrão -->
+<a href="https://wa.me/5538991307687?text=Ol%C3%A1%2C%20vim%20pelo%20site%20NorteWork%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20pacotes%20de%20seguidores" 
+   class="btn-floating" target="_blank">
+    <i class="fab fa-whatsapp fa-lg"></i> Atendimento
+</a>
+
 <footer>
-    © 2026 NorteWork - Sites & Marketing Digital | Todos os direitos reservados
+    <p>© 2026 NorteWork - Sites & Marketing Digital | Todos os direitos reservados</p>
+    <p style="margin-top: 8px;">Crescimento real e seguro para seu Instagram. Entrega imediata e suporte dedicado.</p>
 </footer>
+
+<script>
+    // Função que prepara a mensagem personalizada de acordo com o pacote escolhido
+    function gerarMensagemWhatsApp(packageName, price) {
+        // Formata o preço com vírgula
+        let precoExibicao = price;
+        if (price.includes('.')) {
+            precoExibicao = price.replace('.', ',');
+        }
+        if (!precoExibicao.includes(',')) {
+            precoExibicao = price + ',00';
+        }
+        const mensagem = `Olá! 👋 Vim pelo site da NorteWork e quero adquirir o pacote *${packageName}* no valor de R$ ${precoExibicao}. Gostaria de saber como prosseguir com o pedido e confirmação da entrega imediata. Aguardo seu contato! 🚀`;
+        return encodeURIComponent(mensagem);
+    }
+
+    // Seleciona todos os botões de compra
+    const botoesCompra = document.querySelectorAll('.btn-whats[data-package]');
+    const numeroWhatsApp = "5538991307687";  // número fixo da empresa
+
+    botoesCompra.forEach(botao => {
+        botao.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pacote = botao.getAttribute('data-package');
+            const preco = botao.getAttribute('data-price');
+            const mensagemPronta = gerarMensagemWhatsApp(pacote, preco);
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensagemPronta}`;
+            window.open(url, '_blank');
+        });
+    });
+</script>
 
 </body>
 </html>
